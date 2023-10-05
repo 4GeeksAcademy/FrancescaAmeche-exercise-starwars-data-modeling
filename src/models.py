@@ -24,9 +24,9 @@ class Favorites(Base):
     id = Column(Integer, primary_key=True)
     user_id = Column(Integer, ForeignKey('user.id'))
     type_of_favorite = Column(String(250), nullable=False)
-    people_id= Column(String(250), ForeignKey('people.id'), nullable=True)
-    planet_id= Column(String(250), ForeignKey('planets.id'), nullable=True)
-    starship_id= Column(String(250), ForeignKey('starships.id'), nullable=True)
+    people_id= Column(Integer, ForeignKey('people.id'), nullable=True)
+    planet_id= Column(Integer, ForeignKey('planets.id'), nullable=True)
+    starship_id= Column(Integer, ForeignKey('starships.id'), nullable=True)
 
 class People(Base):
     __tablename__ = 'people'
